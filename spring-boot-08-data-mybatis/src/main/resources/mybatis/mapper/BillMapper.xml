@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangwei.springboot.mapper.BillMapper">
+    <select id="getBillById" resultType="com.zhangwei.springboot.entities.Bill">
+        select * from bill where bid=#{bid}
+    </select>
+
+    <insert id="addBill">
+        insert into bill(bill_code,bill_name,bill_com,bill_num,money,pay,pid,create_date)
+        values(#{billCode},#{billName},#{billCom},#{billNum},#{money},#{pay},#{provider},#{createDate})
+    </insert>
+</mapper>
